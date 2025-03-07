@@ -1,16 +1,18 @@
+const diceElement = document.getElementById("dice");
 const jokeElement = document.getElementById("joke");
 const answerElement = document.getElementById("answer");
 const answerButton = document.getElementById("answer-btn");
 
 const dice = () => {
   return new Promise(function (resolve, reject) {
-    let number = Math.floor(Math.random() * 2) + 1;
+    let number = Math.floor(Math.random() * 6) + 1;
     console.log("Dice rolled: " + number);
+    diceElement.innerHTML = `<h2>${number}</h2>`;
 
     if (number === 1) {
       resolve();
     } else {
-      reject("No joke this time, try again");
+      reject("No joke this time, try again..");
     }
   });
 };
